@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace Sitemap.Generator
 {
+    /// <summary>
+    /// Class html contains data tha will be parsed 
+    /// by the html parser. When the install of the class 
+    /// is created, the user need to call the gethml in 
+    /// order to get the html response.
+    /// </summary>
     class Html
     {
         private string _content;
