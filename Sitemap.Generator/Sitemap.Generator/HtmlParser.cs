@@ -4,7 +4,13 @@ using System.Text;
 
 namespace Sitemap.Generator
 {
-    class HtmlParser
+    public static class HtmlParser
     {
+        public static List<string> GetTags(string webcontent)
+        {
+            List<string> tags = new List<string>();
+            string pattern_tag = @"\w*a.*?href=(""|')(?<ref>.*?)(""|').*?>(.*?)<\w/a\w*>";
+            return null;
+        }
     }
 }
