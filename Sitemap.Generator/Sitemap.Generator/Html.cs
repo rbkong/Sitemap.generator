@@ -23,7 +23,8 @@ namespace Sitemap.Generator
             _url = url;
         }
 
-        public async Task GetContent()
+        public string Content() => _content;
+        public async Task Process()
         {
             try
             {

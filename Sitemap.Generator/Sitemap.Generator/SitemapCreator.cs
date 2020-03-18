@@ -13,6 +13,7 @@ namespace Sitemap.Generator
     /// </summary>
     public static class SitemapCreator
     {
+        public static XNamespace x = "";
         public static XNamespace ns = "http://www.sitemaps.org/schemas/sitemap/0.9";
         public static XNamespace xs = "http://www.w3.org/2001/XMLSchema-instance";
 
@@ -27,19 +28,19 @@ namespace Sitemap.Generator
             xmldoc.Root.Add(node);
         }
 
-        public static void Generate(List<string> data, string changef,
+        public static void Generate(List<Node> data, string changef,
             string priority)
         {
             XDocument sitemap = new XDocument(
                 new XDeclaration("1.0", "UTF-8", "no"),
-                new XElement("urlset",
+                new XElement(ns + "urlset",
                     new XAttribute(XNamespace.Xmlns + "xsi", xs),
                     new XAttribute(xs + "SchemaLocation", 
                     "http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd")
                     )
                 );
-            data.ForEach(node => AddNode(ref sitemap, node, changef, priority));
-            sitemap.Save("sitemap.xml", SaveOptions.DisableFormatting);
+            data.ForEach(node => AddNode(ref sitemap, node.Link, changef, priority));
+            sitemap.Save("sitemap.xml", SaveOptions.None);
         }
     }
 }
