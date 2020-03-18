@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Sitemap.Generator": {
+      "commandName": "Project",
+      "commandLineArgs": "http://specialprojects.com"
+    }
+  }
+}

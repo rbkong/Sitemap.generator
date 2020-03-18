@@ -11,9 +11,9 @@ namespace Sitemap.Generator
         {
             Queue<Node> activeQueue = new Queue<Node>();
             List<string> container = new List<string>();
-            Html html = new Html("http://specialprojects.com");
+            Html html = new Html(args[0]);
             await html.Process();
-            List<string> temp = HtmlParser.GetTags(html.Content(), "http://specialprojects.com");
+            List<string> temp = HtmlParser.GetTags(html.Content(), args[0]);
             container.AddRange(temp);
             foreach (var item in container)
             {
@@ -42,7 +42,7 @@ namespace Sitemap.Generator
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error Occured: " + ex.Message);
+                    //Console.WriteLine("Error Occured: " + ex.Message);
                 }
             }
 

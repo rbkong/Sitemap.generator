@@ -40,7 +40,7 @@ namespace Sitemap.Generator
                     )
                 );
             data.ForEach(node => AddNode(ref sitemap, node.Link, changef, priority));
-            sitemap.Save("sitemap.xml", SaveOptions.None);
+            sitemap.Save(@"C:\Web Sites\main\xml\sitemap.xml", SaveOptions.None);
         }
     }
 }
