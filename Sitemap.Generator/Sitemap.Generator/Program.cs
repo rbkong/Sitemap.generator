@@ -34,7 +34,7 @@ namespace Sitemap.Generator
                         Html childhtml = new Html(node.Link);
                         await childhtml.Process();
                         List<string> tempNodes = HtmlParser.GetTags(childhtml.Content(),
-                            "http://specialprojects.com");
+                            args[0]);
                         tempNodes.ForEach(nd =>
                         {
                             if (!container.Contains(nd))
