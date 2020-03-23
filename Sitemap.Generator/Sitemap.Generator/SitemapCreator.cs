@@ -42,7 +42,7 @@ namespace Sitemap.Generator
                     )
                 );
             data.ForEach(node => AddNode(ref sitemap, node.Link, changef, priority));
-            string path = @"C:\Web Sites\main\xml\sitemap.xml";
+            string path = @"sitemap.xml";
             sitemap.Save(path, SaveOptions.None);
             //sitemap.Save(@"C:\Web Sites\main\xml\sitemap.xml", SaveOptions.None);
             return path;
